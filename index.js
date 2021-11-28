@@ -61,7 +61,7 @@ app.post('/citizen', (req, res) => {
             return
         }
         //send a message to the user with the result
-        res.status(201).send("Citizen was created")
+        res.status(200).send("Citizen was created")
         console.log("Citizen is in the database")
     })
 
@@ -105,16 +105,16 @@ app.put('/citizen/:id', (req, res) => {
     console.log("Trying to edit citizen")
     console.log(parseInt(req.body.age))
 
-
+    let statsArr = (req.body.stats === undefined)? void(0) : req.body.stats.split(",")
     Citizen.findByIdAndUpdate(req.params.id, {
-        age: parseInt(req.body.age), //Number
-        name: req.body.name, //String
-        vaccinated: (req.body.vaccinated === 'true') ? true : false, //Boolean
-        profession: req.body.profession, //String
-        stats: statsArr, //Array
+        age: ((req.body.age) === undefined)? void(0) : parseInt(req.body.age), 
+        name: req.body.name, 
+        vaccinated: (req.body.vaccinated === 'true'), 
+        profession: req.body.profession, 
+        stats: statsArr, 
     }, err => {
         if (err) {
-            res.status(404).send(err)
+            res.status(500).send(err)
             return;
         }
         res.send("It did edit")
@@ -146,3 +146,6 @@ app.listen(port, () => {
     catch(error => console.log(error));
     console.log(`Example app listening at http://localhost:${port}`)
 })
+
+
+
