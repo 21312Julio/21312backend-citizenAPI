@@ -146,6 +146,3 @@ app.listen(port, () => {
     catch(error => console.log(error));
     console.log(`Example app listening at http://localhost:${port}`)
 })
-
-
-
