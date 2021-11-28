@@ -105,6 +105,8 @@ app.put('/citizen/:id', (req, res) => {
     console.log("Trying to edit citizen")
     console.log(parseInt(req.body.age))
 
+    // the value for statsArr will be verified. If undefined, nothing will happen for this value
+    // otherwise it will split the stats section, same for age parsing.
     let statsArr = (req.body.stats === undefined)? void(0) : req.body.stats.split(",")
     Citizen.findByIdAndUpdate(req.params.id, {
         age: ((req.body.age) === undefined)? void(0) : parseInt(req.body.age), 
