@@ -1,4 +1,5 @@
-# Citizen API - CA1 
+# Citizen API - CA1 ![mongoose](https://img.shields.io/badge/db-mongoose-brightgreen) ![language](https://img.shields.io/badge/-javascript-red)
+21312 Julio Beyeler BsC3 Back-End Dev Class
 ## Table of Contents
 * [Introduction](#introduction)
 * [Project Init / Mongoose Setup](#project-init-and-mongoose-setup)
