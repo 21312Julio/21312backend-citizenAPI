@@ -1,4 +1,8 @@
 # Citizen API - CA1 
+## Table of Contents
+* [Introduction](#introduction)
+* [Project Init / Mongoose Setup](#project-init-and-mongoose-setup)
+* [Database Interaction](#database-interaction)
 ## Introduction
 For this first assignment our task was to create an API application that was capable of performing CRUD operations. The tools used in the creation were:
 - MongoDB Atlas Database
